@@ -14,6 +14,8 @@
 		E907E2AF2941C79600FC505A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E907E2AD2941C79600FC505A /* LaunchScreen.storyboard */; };
 		E9D51F9D294216B100ADCADF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D51F9C294216B100ADCADF /* Constants.swift */; };
 		E9D51FA12942277F00ADCADF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D51FA02942277F00ADCADF /* Colors.xcassets */; };
+		E9D51FA6294254EA00ADCADF /* MarkPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9D51FA5294254EA00ADCADF /* MarkPro-Bold.otf */; };
+		E9D51FA8294256EB00ADCADF /* WorkSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9D51FA7294256EB00ADCADF /* WorkSans-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E907E2B02941C79600FC505A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9D51F9C294216B100ADCADF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9D51FA02942277F00ADCADF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E9D51FA5294254EA00ADCADF /* MarkPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.otf"; sourceTree = "<group>"; };
+		E9D51FA7294256EB00ADCADF /* WorkSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		E907E2A12941C79500FC505A /* UIPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E9D51FA22942538B00ADCADF /* Fonts */,
 				E9D51F9B294216A900ADCADF /* Constants */,
 				E907E2B62941D08000FC505A /* Applications */,
 				E907E2B92941D0EB00FC505A /* ViewController */,
@@ -129,6 +134,15 @@
 				E9D51F9C294216B100ADCADF /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E9D51FA22942538B00ADCADF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E9D51FA7294256EB00ADCADF /* WorkSans-Regular.otf */,
+				E9D51FA5294254EA00ADCADF /* MarkPro-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D51FA12942277F00ADCADF /* Colors.xcassets in Resources */,
+				E9D51FA6294254EA00ADCADF /* MarkPro-Bold.otf in Resources */,
 				E907E2AF2941C79600FC505A /* LaunchScreen.storyboard in Resources */,
 				E907E2AC2941C79600FC505A /* Assets.xcassets in Resources */,
+				E9D51FA8294256EB00ADCADF /* WorkSans-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

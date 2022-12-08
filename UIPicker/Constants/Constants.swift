@@ -15,7 +15,10 @@ enum Constants {
     static let offset = 8
     static let cornerRadius: CGFloat = 8
     static let widthOfStackView = 140
-    static let heightOfStackView = 120
+    static let heightOfStackView = 130
     static let widthOfPicker = 160
     static let widthOfLogo = 300
+    static let fontSizeInGreetingTextLabel: CGFloat = 36
+    static let fontSizeInModeButton: CGFloat = 20
+    static let fontSizeInPickerView: CGFloat = 18
 }

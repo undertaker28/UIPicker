@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Welcome 🤩"
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.font = UIFont(name: "MarkPro-Bold", size: Constants.fontSizeInGreetingTextLabel)
         label.textColor = UIColor(named: "TextColor")
         label.textAlignment = .center
         label.clipsToBounds = true
@@ -43,6 +43,7 @@ class MainViewController: UIViewController {
         button.backgroundColor = UIColor(named: "ButtonColor")
         button.layer.cornerRadius = Constants.cornerRadius
         button.clipsToBounds = true
+        button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 0
         button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
         return button
@@ -55,6 +56,7 @@ class MainViewController: UIViewController {
         button.backgroundColor = UIColor(named: "ButtonColor")
         button.layer.cornerRadius = Constants.cornerRadius
         button.clipsToBounds = true
+        button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 1
         button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
         return button
@@ -67,6 +69,7 @@ class MainViewController: UIViewController {
         button.backgroundColor = UIColor(named: "ButtonColor")
         button.layer.cornerRadius = Constants.cornerRadius
         button.clipsToBounds = true
+        button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 2
         button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
         return button
@@ -145,6 +148,14 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return 1
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInPickerView)
+        label.text = Constants.languages[row].language
+        label.textAlignment = .center
+        return label
+    }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Constants.languages.count
     }
