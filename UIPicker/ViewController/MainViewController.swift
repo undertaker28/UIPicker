@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     private let logoImageView: UIImageView = {
         let image = UIImage(named: "Logo")?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor(named: "ElementsColor")
         return imageView
     }()
@@ -133,13 +134,10 @@ class MainViewController: UIViewController {
         switch button.tag {
         case 0:
             overrideUserInterfaceStyle = .light
-            break
         case 1:
             overrideUserInterfaceStyle = .dark
-            break
         default:
             overrideUserInterfaceStyle = .unspecified
-            break
         }
     }
 }
@@ -151,7 +149,9 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
-        if let view = view as? UILabel { label = view }
+        if let view = view as? UILabel {
+            label = view
+        }
         label.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInPickerView)
         label.text = Constants.languages[row].language
         label.textAlignment = .center
