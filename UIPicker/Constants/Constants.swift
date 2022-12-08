@@ -21,4 +21,5 @@ enum Constants {
     static let fontSizeInGreetingTextLabel: CGFloat = 36
     static let fontSizeInModeButton: CGFloat = 20
     static let fontSizeInPickerView: CGFloat = 18
+    static let numberOfComponentsInPickerView = 1
 }

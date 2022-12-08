@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
         button.clipsToBounds = true
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 0
-        button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
         return button
     }()
     
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
         button.clipsToBounds = true
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 1
-        button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
         return button
     }()
     
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         button.clipsToBounds = true
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 2
-        button.addTarget(MainViewController.self, action: #selector(changeMode), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
         return button
     }()
     
@@ -128,34 +128,36 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc func changeMode() {
-        let stackView = self.buttonsStackView.subviews.first
-        stackView?.subviews.forEach({ button in
-            switch button.tag {
-            case 0:
-                overrideUserInterfaceStyle = .light
-            case 1:
-                overrideUserInterfaceStyle = .dark
-            default:
-                overrideUserInterfaceStyle = .unspecified
-            }
-        })
+    @objc func changeMode(_ sender: UIButton) {
+        let button = sender.self
+        switch button.tag {
+        case 0:
+            overrideUserInterfaceStyle = .light
+            break
+        case 1:
+            overrideUserInterfaceStyle = .dark
+            break
+        default:
+            overrideUserInterfaceStyle = .unspecified
+            break
+        }
     }
 }
 
 extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return Constants.numberOfComponentsInPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
-        if let v = view as? UILabel { label = v }
+        if let view = view as? UILabel { label = view }
         label.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInPickerView)
         label.text = Constants.languages[row].language
         label.textAlignment = .center
         return label
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Constants.languages.count
     }
