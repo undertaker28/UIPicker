@@ -12,6 +12,7 @@
 		E907E2A72941C79500FC505A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907E2A62941C79500FC505A /* ViewController.swift */; };
 		E907E2AC2941C79600FC505A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E907E2AB2941C79600FC505A /* Assets.xcassets */; };
 		E907E2AF2941C79600FC505A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E907E2AD2941C79600FC505A /* LaunchScreen.storyboard */; };
+		E9D51F9D294216B100ADCADF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D51F9C294216B100ADCADF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E907E2AB2941C79600FC505A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E907E2AE2941C79600FC505A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E907E2B02941C79600FC505A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D51F9C294216B100ADCADF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,6 @@
 				530A4282CC3065D838A69A94 /* Pods-UIPicker.debug.xcconfig */,
 				7E2AFDC8950E67E31D4C525F /* Pods-UIPicker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,6 +78,7 @@
 		E907E2A12941C79500FC505A /* UIPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E9D51F9B294216A900ADCADF /* Constants */,
 				E907E2B62941D08000FC505A /* Applications */,
 				E907E2B92941D0EB00FC505A /* ViewController */,
 				E907E2B72941D09F00FC505A /* SupportingFiles */,
@@ -116,6 +118,14 @@
 				E907E2A62941C79500FC505A /* ViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E9D51F9B294216A900ADCADF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E9D51F9C294216B100ADCADF /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +244,7 @@
 			files = (
 				E907E2A72941C79500FC505A /* ViewController.swift in Sources */,
 				E907E2A32941C79500FC505A /* AppDelegate.swift in Sources */,
+				E9D51F9D294216B100ADCADF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
