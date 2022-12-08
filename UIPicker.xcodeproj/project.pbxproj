@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6783F51013B63E7B8B8A0165 /* Pods_UIPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23603614EF75C7973DBED615 /* Pods_UIPicker.framework */; };
 		E907E2A32941C79500FC505A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907E2A22941C79500FC505A /* AppDelegate.swift */; };
 		E907E2A72941C79500FC505A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907E2A62941C79500FC505A /* ViewController.swift */; };
 		E907E2AC2941C79600FC505A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E907E2AB2941C79600FC505A /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23603614EF75C7973DBED615 /* Pods_UIPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		530A4282CC3065D838A69A94 /* Pods-UIPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIPicker.debug.xcconfig"; path = "Target Support Files/Pods-UIPicker/Pods-UIPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		7E2AFDC8950E67E31D4C525F /* Pods-UIPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIPicker.release.xcconfig"; path = "Target Support Files/Pods-UIPicker/Pods-UIPicker.release.xcconfig"; sourceTree = "<group>"; };
 		E907E29F2941C79500FC505A /* UIPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E907E2A22941C79500FC505A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E907E2A62941C79500FC505A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,17 +31,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6783F51013B63E7B8B8A0165 /* Pods_UIPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F892FD3DD47F67478F78463 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23603614EF75C7973DBED615 /* Pods_UIPicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		753BB9061AA35891AFF9E02A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				530A4282CC3065D838A69A94 /* Pods-UIPicker.debug.xcconfig */,
+				7E2AFDC8950E67E31D4C525F /* Pods-UIPicker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E907E2962941C79500FC505A = {
 			isa = PBXGroup;
 			children = (
 				E907E2A12941C79500FC505A /* UIPicker */,
 				E907E2A02941C79500FC505A /* Products */,
+				753BB9061AA35891AFF9E02A /* Pods */,
+				2F892FD3DD47F67478F78463 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E907E2B32941C79600FC505A /* Build configuration list for PBXNativeTarget "UIPicker" */;
 			buildPhases = (
+				D23F7537477A3DB337059A83 /* [CP] Check Pods Manifest.lock */,
 				E907E29B2941C79500FC505A /* Sources */,
 				E907E29C2941C79500FC505A /* Frameworks */,
 				E907E29D2941C79500FC505A /* Resources */,
+				CE7C7F26D4809619DCA5DB73 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE7C7F26D4809619DCA5DB73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIPicker/Pods-UIPicker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIPicker/Pods-UIPicker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIPicker/Pods-UIPicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23F7537477A3DB337059A83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIPicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E907E29B2941C79500FC505A /* Sources */ = {
@@ -298,6 +367,7 @@
 		};
 		E907E2B42941C79600FC505A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530A4282CC3065D838A69A94 /* Pods-UIPicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +395,7 @@
 		};
 		E907E2B52941C79600FC505A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E2AFDC8950E67E31D4C525F /* Pods-UIPicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
