@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 0
         button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
+        button.startPressAnimation()
         return button
     }()
     
@@ -60,6 +61,7 @@ class MainViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 1
         button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
+        button.startPressAnimation()
         return button
     }()
     
@@ -73,6 +75,7 @@ class MainViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: Constants.fontSizeInModeButton)
         button.tag = 2
         button.addTarget(self, action: #selector(changeMode), for: .touchUpInside)
+        button.startPressAnimation()
         return button
     }()
     
