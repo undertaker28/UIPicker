@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         return pickerView
     }()
     
-    private let lightModeButton: UIButton = {
+    private lazy var lightModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Light", for: .normal)
         button.setTitleColor(UIColor(named: "TextColor"), for: .normal)
@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private let darkModeButton: UIButton = {
+    private lazy var darkModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Dark", for: .normal)
         button.setTitleColor(UIColor(named: "TextColor"), for: .normal)
@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private let defaultModeButton: UIButton = {
+    private lazy var defaultModeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Default", for: .normal)
         button.setTitleColor(UIColor(named: "TextColor"), for: .normal)
@@ -177,8 +177,8 @@ extension MainViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         changeLanguage(language: Constants.languages[row].abbreviation)
-        selectedLanguage = Constants.languages[row]
         UserDefaults.standard.set(row, forKey: "selectedRow")
+        selectedLanguage = Constants.languages[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

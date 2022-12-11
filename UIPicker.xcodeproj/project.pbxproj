@@ -32,8 +32,8 @@
 		E907E2B02941C79600FC505A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9915FFC2945F94D008447F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9915FFE2945F961008447F6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E9915FFF2945F96C008447F6 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E99160012945FE0B008447F6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E991600429461900008447F6 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9D51F9C294216B100ADCADF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9D51FA02942277F00ADCADF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9D51FA5294254EA00ADCADF /* MarkPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.otf"; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 		E907E2A12941C79500FC505A /* UIPicker */ = {
 			isa = PBXGroup;
 			children = (
-				E9D51F9B294216A900ADCADF /* Constants */,
 				E907E2B62941D08000FC505A /* Applications */,
 				E907E2B92941D0EB00FC505A /* ViewController */,
 				E9D51FA22942538B00ADCADF /* Fonts */,
@@ -113,6 +112,7 @@
 			children = (
 				E9915FE82945F4C6008447F6 /* Localizable */,
 				E907E2B82941D0A800FC505A /* Assets */,
+				E9D51F9C294216B100ADCADF /* Constants.swift */,
 				E907E2AD2941C79600FC505A /* LaunchScreen.storyboard */,
 				E907E2B02941C79600FC505A /* Info.plist */,
 			);
@@ -150,14 +150,6 @@
 				E99160012945FE0B008447F6 /* String+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E9D51F9B294216A900ADCADF /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				E9D51F9C294216B100ADCADF /* Constants.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		E9D51FA22942538B00ADCADF /* Fonts */ = {
@@ -312,7 +304,7 @@
 			children = (
 				E9915FFC2945F94D008447F6 /* en */,
 				E9915FFE2945F961008447F6 /* ru */,
-				E9915FFF2945F96C008447F6 /* be */,
+				E991600429461900008447F6 /* be */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -451,6 +443,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +472,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
