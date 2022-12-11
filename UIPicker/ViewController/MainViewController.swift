@@ -9,24 +9,24 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    private lazy var selectedLanguage = Constants.languages[0]
+    private lazy var selectedLanguage = Constants.languages[selectedRow]
+    private var selectedRow: Int {
+        UserDefaults.standard.object(forKey: "selectedRow") as? Int ?? 0
+    }
     
     private let logoImageView: UIImageView = {
         let image = UIImage(named: "Logo")?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor(named: "ElementsColor")
         return imageView
     }()
     
     private let greetingTextLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
         label.text = "Welcome 🤩"
+        label.textAlignment = .center
         label.font = UIFont(name: "MarkPro-Bold", size: Constants.fontSizeInGreetingTextLabel)
         label.textColor = UIColor(named: "TextColor")
-        label.textAlignment = .center
-        label.clipsToBounds = true
         return label
     }()
     
@@ -87,10 +87,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
+        changeLanguage(language: Constants.languages[selectedRow].abbreviation)
         addSubviews()
         makeConstraints()
         languagePickerView.delegate = self
         languagePickerView.dataSource = self
+        if let row = Constants.languages.firstIndex(where: { $0.abbreviation == Constants.languages[selectedRow].abbreviation }) {
+            languagePickerView.selectRow(row, inComponent: 0, animated: false)
+        }
     }
     
     private func addSubviews() {
@@ -102,30 +106,29 @@ class MainViewController: UIViewController {
     
     private func makeConstraints() {
         logoImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(Constants.offsetFromTop)
             $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(Constants.offsetFromTop)
             $0.width.equalTo(Constants.widthOfLogo)
             $0.height.equalTo(logoImageView.snp.width)
         }
         
         greetingTextLabel.snp.makeConstraints {
-            $0.width.equalToSuperview()
-            $0.top.equalTo(logoImageView.snp.bottom)
             $0.centerX.equalToSuperview()
+            $0.top.equalTo(logoImageView.snp.bottom)
         }
         
         languagePickerView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(Constants.heightMultiplier)
             $0.top.equalTo(greetingTextLabel.snp.bottom).offset(Constants.offset)
-            $0.centerX.equalToSuperview()
             $0.width.equalTo(Constants.widthOfPicker)
         }
         
         buttonsStackView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
             $0.width.equalTo(Constants.widthOfStackView)
             $0.height.equalTo(Constants.heightOfStackView)
             $0.top.equalTo(languagePickerView.snp.bottom).offset(Constants.offset)
-            $0.centerX.equalToSuperview()
         }
     }
     
@@ -140,13 +143,27 @@ class MainViewController: UIViewController {
             overrideUserInterfaceStyle = .unspecified
         }
     }
+    
+    private func changeLanguage(language: String) {
+        greetingTextLabel.text = "Welcome 🤩".localized(language)
+        lightModeButton.setTitle("Light".localized(language), for: .normal)
+        darkModeButton.setTitle("Dark".localized(language), for: .normal)
+        defaultModeButton.setTitle("Default".localized(language), for: .normal)
+        languagePickerView.reloadAllComponents()
+    }
 }
 
-extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension MainViewController: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return Constants.numberOfComponentsInPickerView
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Constants.languages.count
+    }
+}
+
+extension MainViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let view = view as? UILabel {
@@ -158,11 +175,13 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return label
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.languages.count
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        changeLanguage(language: Constants.languages[row].abbreviation)
+        selectedLanguage = Constants.languages[row]
+        UserDefaults.standard.set(row, forKey: "selectedRow")
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.languages[row].language
+        return Constants.languages[row].language.localized(selectedLanguage.abbreviation)
     }
 }
